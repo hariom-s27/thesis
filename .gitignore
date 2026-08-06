@@ -1,0 +1,8 @@
+.env
+.venv/
+api_transcripts/
+old _work/
+*.pkl
+__pycache__/
+week1_thesis/fd6jq-osfstorage-Legacy-archive/
+*.pdf
