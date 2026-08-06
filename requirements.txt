@@ -1,0 +1,8 @@
+pdfplumber
+spacy
+nltk
+scikit-learn
+pandas
+numpy
+requests
+pysentiment2
