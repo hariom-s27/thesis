@@ -20,14 +20,16 @@
 import os
 import numpy as np, pandas as pd
 
-RESULTS = "phase5_validation.csv"
+OUTPUT_DIR = r"D:\sem_iitk\sem 8\thesis\outputs"
+RESULTS = os.path.join(OUTPUT_DIR, "phase5_validation.csv")
 
 # industry labels -- EDIT to match your firm list
 INDUSTRY = {
-    "XOM":"Energy","CVX":"Energy",
-    "NEE":"Utilities","DUK":"Utilities",
+    "XOM":"Energy","CVX":"Energy","COP":"Energy","OXY":"Energy",
+    "NEE":"Utilities","DUK":"Utilities","SO":"Utilities","D":"Utilities",
+    "DAL":"Airlines",
     "GM":"Autos","F":"Autos",
-    "CAT":"Machinery","BA":"Aerospace",
+    "CAT":"Machinery","BA":"Aerospace","MMM":"Industrials",
     "JPM":"Finance","MSFT":"Technology",
     "WMT":"Retail","KO":"Consumer","PFE":"Pharma","UNH":"Healthcare",
 }
@@ -173,6 +175,6 @@ print("""
   your firm count and treat it as indicative.
 """)
 
-fy.to_csv("phase6_firmyear_analysis.csv", index=False)
-prof.to_csv("phase6_firm_profiles.csv", index=False)
-print("saved -> phase6_firmyear_analysis.csv, phase6_firm_profiles.csv")
+fy.to_csv(os.path.join(OUTPUT_DIR, "phase6_firmyear_analysis.csv"), index=False)
+prof.to_csv(os.path.join(OUTPUT_DIR, "phase6_firm_profiles.csv"), index=False)
+print("saved -> outputs/phase6_firmyear_analysis.csv, outputs/phase6_firm_profiles.csv")

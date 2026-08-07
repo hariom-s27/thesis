@@ -31,6 +31,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 # ---- paths (EDIT) -----------------------------------------------------------
 TRANSCRIPT_DIR = r"D:\sem_iitk\sem 8\thesis\api_transcripts"
 DICT_DIR       = r"D:\sem_iitk\sem 8\thesis\old _work\code\jofi13219-sup-0002-replicationcode\Replication Files Sautner et al. (2023)\B. Figure 1 2, Table 2, and IA Table 6 7 8 9 11\bigrams"
+OUTPUT_DIR     = r"D:\sem_iitk\sem 8\thesis\outputs"
 
 # ---- Table IA.III — the 50 initial bigrams (typos preserved as published) ----
 INITIAL = {"air pollution","electric vehicle","new energy","air quality","energy climate",
@@ -189,5 +190,5 @@ below = [s for s, c in res if c < 0.85]
 print(f"\n  seeds falling below the paper's 85% threshold: "
       f"{len(below)}{' -> ' + str(below) if below else ' (none) -- matches the paper'}")
 
-df.to_csv("phase5_validation.csv", index=False)
-print("\nsaved -> phase5_validation.csv")
+df.to_csv(os.path.join(OUTPUT_DIR, "phase5_validation.csv"), index=False)
+print("\nsaved -> outputs/phase5_validation.csv")

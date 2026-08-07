@@ -21,6 +21,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 # ---- paths (EDIT) -----------------------------------------------------------
 TRANSCRIPT_DIR = r"D:\sem_iitk\sem 8\thesis\api_transcripts"
 DICT_DIR       = r"D:\sem_iitk\sem 8\thesis\old _work\code\jofi13219-sup-0002-replicationcode\Replication Files Sautner et al. (2023)\B. Figure 1 2, Table 2, and IA Table 6 7 8 9 11\bigrams"
+OUTPUT_DIR     = r"D:\sem_iitk\sem 8\thesis\outputs"
 N_SAMPLE       = 25          # how many sentences to print for human reading
 
 with open(os.path.join(DICT_DIR, "bigrams_07222021.pkl"), "rb") as f:
@@ -88,8 +89,8 @@ print("TOP 30 MATCHED BIGRAMS  (this reproduces the paper's Table 2 format)")
 top = pd.DataFrame(hits.most_common(30), columns=["bigram", "count"])
 print(top.to_string(index=False))
 top_all = pd.DataFrame(hits.most_common(), columns=["bigram", "count"])
-top_all.to_csv("audit_matched_bigrams.csv", index=False)
-print(f"\nfull list ({len(hits)} bigrams) -> audit_matched_bigrams.csv\n")
+top_all.to_csv(os.path.join(OUTPUT_DIR, "audit_matched_bigrams.csv"), index=False)
+print(f"\nfull list ({len(hits)} bigrams) -> outputs/audit_matched_bigrams.csv\n")
 
 # ---- 4. HUMAN AUDIT: read these yourself ------------------------------------
 print("=" * 60)
@@ -104,8 +105,8 @@ for name, bgs, s in random.sample(samples, min(N_SAMPLE, len(samples))):
     print(f"   {s[:220]}\n")
 
 pd.DataFrame(samples, columns=["file","matched_bigrams","sentence"]) \
-  .to_csv("audit_sentences.csv", index=False)
-print(f"all {len(samples)} matched sentences -> audit_sentences.csv")
+  .to_csv(os.path.join(OUTPUT_DIR, "audit_sentences.csv"), index=False)
+print(f"all {len(samples)} matched sentences -> outputs/audit_sentences.csv")
 
 # =============================================================================
 # KNOWN ISSUE TO REPORT IN YOUR THESIS (found by this tool):

@@ -14,7 +14,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 # ---- paths --------------------------------------------------------------
 DICT_DIR       = r"D:\sem_iitk\sem 8\thesis\old _work\code\jofi13219-sup-0002-replicationcode\Replication Files Sautner et al. (2023)\B. Figure 1 2, Table 2, and IA Table 6 7 8 9 11\bigrams"
 TRANSCRIPT_DIR = r"D:\sem_iitk\sem 8\thesis\api_transcripts"
-OUT_CSV        = r"D:\sem_iitk\sem 8\thesis\firm_year_trends.csv"
+OUT_CSV        = r"D:\sem_iitk\sem 8\thesis\outputs\firm_year_trends.csv"
 
 # ---- dictionaries ---------------------------------------------------------
 def _d(n):

@@ -30,7 +30,8 @@ from sklearn.feature_extraction.text import CountVectorizer
 TRANSCRIPT_DIR = r"D:\sem_iitk\sem 8\thesis\api_transcripts"
 DICT_DIR       = r"D:\sem_iitk\sem 8\thesis\old _work\code\jofi13219-sup-0002-replicationcode\Replication Files Sautner et al. (2023)\B. Figure 1 2, Table 2, and IA Table 6 7 8 9 11\bigrams"
 OFFICIAL_CSV   = r"D:\sem_iitk\sem 8\thesis\old _work\csv\firmyear_score_2024Q4_Version_2025_Jul_03.csv"
-MAP_JSON       = r"D:\sem_iitk\sem 8\thesis\ticker_isin_map.json"
+OUTPUT_DIR     = r"D:\sem_iitk\sem 8\thesis\outputs"
+MAP_JSON       = os.path.join(OUTPUT_DIR, "ticker_isin_map.json")
 
 with open(os.path.join(DICT_DIR, "bigrams_07222021.pkl"), "rb") as f:
     CC = set(x.lower() for x in pickle.load(f))
@@ -204,5 +205,5 @@ else:
         c = test[f"risk_{best}"].corr(test["cc_risk_ew"])
         print(f"\n  correlation on TEST ({best} vs official) = {c:.4f}")
 
-fy.to_csv("phase4_results.csv", index=False)
-print("\nsaved -> phase4_results.csv")
+fy.to_csv(os.path.join(OUTPUT_DIR, "phase4_results.csv"), index=False)
+print("\nsaved -> outputs/phase4_results.csv")

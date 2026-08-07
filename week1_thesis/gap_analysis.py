@@ -19,7 +19,7 @@
 import os
 import numpy as np, pandas as pd
 
-RESULTS_CSV = "validation_results.csv"
+RESULTS_CSV = r"D:\sem_iitk\sem 8\thesis\outputs\validation_results.csv"
 TRANSCRIPT_DIR = r"D:\sem_iitk\sem 8\thesis\api_transcripts"
 
 df = pd.read_csv(RESULTS_CSV)

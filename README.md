@@ -18,6 +18,7 @@ external validity).
 | `week1_thesis/phase5_validation_suite.py` | Phase 5 — replicates the authors' own validation exercises (measure correlations, seed-vs-discovery comparison, bigram perturbation test). |
 | `week1_thesis/phase6_analysis_suite.py` | Phase 6 — reruns the authors' *validation logic* (not number-matching) on our own data: firm profiles, cross-firm ranking, time trends, industry variation, variance decomposition. |
 | `week1_thesis/phase7_extended_validation.py` | Phase 7 — placebo/negative-control test, split-half reliability, preprocessing robustness, a Paris-Agreement (2015) event study, a human-audit export, and external validity vs. 10-K MD&A scores. |
+| `week1_thesis/phase8_inference.py` | Phase 8 — statistical inference: firm-clustered bootstrap confidence intervals, a permutation test against a scrambled-word-order null, and split-stability of the risk-synonym list. |
 | `week1_thesis/audit_bigrams.py` | Opens the black box: shows exactly which dictionary bigrams matched, dictionary coverage, and sample matched sentences for manual review. |
 | `week1_thesis/gap_analysis.py` | Diagnoses *where* the reproduction falls short of the official numbers — systematic (one shared cause) vs. scattered (small-denominator noise) error. |
 | `week1_thesis/analyze_trends.py` | Scores every transcript on disk (exposure + sentiment/risk) and aggregates to firm-year, for trend analysis across firms and years. |
@@ -28,14 +29,17 @@ external validity).
 
 ## Pipeline order
 
-1. Collect transcripts — `collect_multi_provider.py` (writes to `api_transcripts/`, tracked in `download_log.csv` and `confirmed_empty.json`).
-2. Score exposure — `exact_reproduction_api.py` or `score_and_correlate.py` → `validation_results.csv`.
+All result files land in one place: `outputs/` at the repo root.
+
+1. Collect transcripts — `collect_multi_provider.py` (writes transcripts to `api_transcripts/`, logs to `outputs/download_log.csv` and `outputs/confirmed_empty.json`).
+2. Score exposure — `exact_reproduction_api.py` or `score_and_correlate.py` → `outputs/validation_results.csv`.
 3. Add sentiment/risk — `phase2_api.py`.
-4. TF-IDF + risk-list validation — `phase3_tfidf.py`, `phase4_tfidf_and_risk.py` → `phase4_results.csv`.
-5. Full validation suite — `phase5_validation_suite.py` → `phase5_validation.csv`.
-6. Analysis suite — `phase6_analysis_suite.py` → `phase6_firm_profiles.csv`, `phase6_firmyear_analysis.csv`.
-7. Extended validation — `phase7_extended_validation.py`.
-8. Audit — `audit_bigrams.py` → `audit_matched_bigrams.csv`, `audit_sentences.csv`.
+4. TF-IDF + risk-list validation — `phase3_tfidf.py`, `phase4_tfidf_and_risk.py` → `outputs/phase4_results.csv`.
+5. Full validation suite — `phase5_validation_suite.py` → `outputs/phase5_validation.csv`.
+6. Analysis suite — `phase6_analysis_suite.py` → `outputs/phase6_firm_profiles.csv`, `outputs/phase6_firmyear_analysis.csv`.
+7. Extended validation — `phase7_extended_validation.py` → `outputs/c1_placebo.csv`, `outputs/c5_splithalf.csv`, `outputs/c6_robustness.csv`, `outputs/audit_coding_sheet.csv`, `outputs/c7_external_validity.csv`.
+8. Inference — `phase8_inference.py` → `outputs/phase8_bootstrap_ci.csv`, `outputs/phase8_permutation.csv`.
+9. Audit — `audit_bigrams.py` → `outputs/audit_matched_bigrams.csv`, `outputs/audit_sentences.csv`.
 
 ## Setup
 
@@ -59,8 +63,9 @@ AV_API_KEYS=key1,key2,key3
   and official score CSVs), and `*.pkl` files are **not** committed — they're
   either large, regenerable, or licensed replication data that shouldn't be
   redistributed. Re-download/re-run to regenerate them locally.
-- Result CSVs/JSON (`validation_results.csv`, `phase4_results.csv`,
-  `phase5_validation.csv`, `phase6_*.csv`, `firm_year_trends.csv`,
-  `download_log.csv`, `confirmed_empty.json`, `ticker_isin_map.json`) *are*
+- Result CSVs/JSON all live in `outputs/` (`validation_results.csv`,
+  `phase4_results.csv`, `phase5_validation.csv`, `phase6_*.csv`,
+  `phase8_*.csv`, `firm_year_trends.csv`, `download_log.csv`,
+  `confirmed_empty.json`, `ticker_isin_map.json`, audit/`c1`–`c7` CSVs) *are*
   committed, since they're the actual output of the pipeline and small enough
   to track directly.

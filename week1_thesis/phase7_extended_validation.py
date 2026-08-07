@@ -24,10 +24,14 @@ from sklearn.feature_extraction.text import CountVectorizer
 TRANSCRIPT_DIR = r"D:\sem_iitk\sem 8\thesis\api_transcripts"
 DICT_DIR       = r"D:\sem_iitk\sem 8\thesis\old _work\code\jofi13219-sup-0002-replicationcode\Replication Files Sautner et al. (2023)\B. Figure 1 2, Table 2, and IA Table 6 7 8 9 11\bigrams"
 MEAS_ERR_CSV   = r"D:\sem_iitk\sem 8\thesis\old _work\csv\cc_measurementerror_reg.csv"
+OUTPUT_DIR     = r"D:\sem_iitk\sem 8\thesis\outputs"
 
 TICKER_ISIN = {"XOM":"US30231G1022","CVX":"US1667641005","NEE":"US65339F1012",
-    "DUK":"US26441C2044","GM":"US37045V1008","F":"US3453708600","CAT":"US1491231015",
-    "BA":"US0970231058","JPM":"US46625H1005","MSFT":"US5949181045",
+    "DUK":"US26441C2044","COP":"US20825C1045","OXY":"US6745991058","SO":"US8425871071",
+    "D":"US25746U1097","DAL":"US2473617023",
+    "GM":"US37045V1008","F":"US3453708600","CAT":"US1491231015",
+    "BA":"US0970231058","MMM":"US88579Y1010",
+    "JPM":"US46625H1005","MSFT":"US5949181045",
     "WMT":"US9311421039","PFE":"US7170811035","KO":"US1912161007","UNH":"US91324P1021"}
 
 with open(os.path.join(DICT_DIR, "bigrams_07222021.pkl"), "rb") as f:
@@ -231,9 +235,9 @@ random.seed(7)
 audit = pd.DataFrame(random.sample(hits, min(100, len(hits))))
 audit["coder1_is_climate_1or0"] = ""
 audit["coder2_is_climate_1or0"] = ""
-audit.to_csv("audit_coding_sheet.csv", index=False)
+audit.to_csv(os.path.join(OUTPUT_DIR, "audit_coding_sheet.csv"), index=False)
 print(f"  matched sentences available: {len(hits)}")
-print(f"  exported {len(audit)} for coding -> audit_coding_sheet.csv")
+print(f"  exported {len(audit)} for coding -> outputs/audit_coding_sheet.csv")
 print("""
   HOW TO USE: open in Excel. For each row mark 1 if the sentence is genuinely
   about climate change, 0 if not. Get a second person to code independently.
@@ -271,15 +275,15 @@ if os.path.exists(MEAS_ERR_CSV):
   than the call-to-call correlation -- firms write differently in filings than
   they speak on calls. If ours-vs-MD&A is close to their-call-vs-MD&A, our measure
   behaves like theirs against an outside yardstick.""")
-        mg.to_csv("c7_external_validity.csv", index=False)
+        mg.to_csv(os.path.join(OUTPUT_DIR, "c7_external_validity.csv"), index=False)
 else:
     print("  cc_measurementerror_reg.csv not found -- check MEAS_ERR_CSV path")
 
-pl.to_csv("c1_placebo.csv", index=False)
-sh.to_csv("c5_splithalf.csv", index=False)
-rb.to_csv("c6_robustness.csv", index=False)
-print("\nsaved -> c1_placebo.csv, c5_splithalf.csv, c6_robustness.csv,")
-print("         audit_coding_sheet.csv, c7_external_validity.csv")
+pl.to_csv(os.path.join(OUTPUT_DIR, "c1_placebo.csv"), index=False)
+sh.to_csv(os.path.join(OUTPUT_DIR, "c5_splithalf.csv"), index=False)
+rb.to_csv(os.path.join(OUTPUT_DIR, "c6_robustness.csv"), index=False)
+print("\nsaved -> outputs/c1_placebo.csv, outputs/c5_splithalf.csv, outputs/c6_robustness.csv,")
+print("         outputs/audit_coding_sheet.csv, outputs/c7_external_validity.csv")
 
 # =============================================================================
 # C2 — NOT AUTOMATED (needs an outside download)

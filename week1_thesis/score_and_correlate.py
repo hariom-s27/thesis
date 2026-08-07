@@ -20,7 +20,8 @@ from sklearn.feature_extraction.text import CountVectorizer
 TRANSCRIPT_DIR = r"D:\sem_iitk\sem 8\thesis\api_transcripts"
 DICT_DIR       = r"D:\sem_iitk\sem 8\thesis\old _work\code\jofi13219-sup-0002-replicationcode\Replication Files Sautner et al. (2023)\B. Figure 1 2, Table 2, and IA Table 6 7 8 9 11\bigrams"
 OFFICIAL_CSV   = r"D:\sem_iitk\sem 8\thesis\old _work\csv\firmyear_score_2024Q4_Version_2025_Jul_03.csv"
-MAP_JSON       = r"D:\sem_iitk\sem 8\thesis\ticker_isin_map.json"     # written by collect_bulk_transcripts.py
+OUTPUT_DIR     = r"D:\sem_iitk\sem 8\thesis\outputs"
+MAP_JSON       = os.path.join(OUTPUT_DIR, "ticker_isin_map.json")     # written by collect_bulk_transcripts.py
 
 # ---- dictionaries -----------------------------------------------------------
 def _d(n):
@@ -123,7 +124,8 @@ if len(v) >= 3:
                   f"Spearman = {v[a].corr(v[b], method='spearman'):.4f}   (n={len(v)})")
     print("\n  Pearson  = do the VALUES track each other?")
     print("  Spearman = do the RANKINGS track each other? (robust to outliers)")
-    m.to_csv("validation_results.csv", index=False)
-    print("\nsaved -> validation_results.csv")
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    m.to_csv(os.path.join(OUTPUT_DIR, "validation_results.csv"), index=False)
+    print("\nsaved -> outputs/validation_results.csv")
 else:
     print(f"\nonly {len(v)} matched firm-years -- collect more, need >=3 (aim 20+)")

@@ -19,8 +19,8 @@ import requests
 
 # ---- config -----------------------------------------------------------------
 OUT_DIR      = r"D:\sem_iitk\sem 8\thesis\api_transcripts"
-LOG_CSV      = r"D:\sem_iitk\sem 8\thesis\download_log.csv"
-YEARS        = [2024]          # official CSV ends at 2024 -> never fetch beyond it
+LOG_CSV      = r"D:\sem_iitk\sem 8\thesis\outputs\download_log.csv"
+YEARS        = [2025]          # official CSV ends at 2024 -> never fetch beyond it
 DAILY_BUDGET = 24              # keep 1 spare below the 25/day limit
 SLEEP_SEC    = 15              # ~4 calls/min, safely under the per-minute cap
 
@@ -34,15 +34,23 @@ SLEEP_SEC    = 15              # ~4 calls/min, safely under the per-minute cap
 FIRMS = {
     "XOM":  "US30231G1022",   # ExxonMobil        - oil & gas   (already verified)
     "CVX":  "US1667641005",   # Chevron           - oil & gas
+    "COP":  "US20825C1045",   # ConocoPhillips    - oil & gas
+    "OXY":  "US6745991058",   # Occidental        - oil & gas
     "NEE":  "US65339F1012",   # NextEra Energy    - utilities
     "DUK":  "US26441C2044",   # Duke Energy       - utilities
+    "SO":   "US8425871071",   # Southern Co       - utilities
+    "D":    "US25746U1097",   # Dominion Energy   - utilities
+    "DAL":  "US2473617023",   # Delta Air Lines   - airlines
     "GM":   "US37045V1008",   # General Motors    - autos
     "F":    "US3453708600",   # Ford              - autos
     "CAT":  "US1491231015",   # Caterpillar       - machinery
     "BA":   "US0970231058",   # Boeing            - aerospace
     "JPM":  "US46625H1005",   # JPMorgan          - banking
     "MSFT": "US5949181045",   # Microsoft         - software
-    # ... add more. Aim for 30-50 across many industries.
+    "WMT":  "US9311421039",   # Walmart           - retail
+    "PFE":  "US7170811035",   # Pfizer            - pharma
+    "KO":   "US1912161007",   # Coca-Cola         - consumer
+    "UNH":  "US91324P1021",   # UnitedHealth      - healthcare
 }
 
 # ---- key --------------------------------------------------------------------
@@ -123,7 +131,7 @@ ok = sum(1 for r in log_rows if r["status"] == "ok")
 print(f"\nthis run: {ok} saved, {len(log_rows)-ok} failed. Log -> {LOG_CSV}")
 
 # ---- save the ticker->ISIN bridge for the scoring step ----------------------
-MAP_JSON = r"D:\sem_iitk\sem 8\thesis\ticker_isin_map.json"
+MAP_JSON = r"D:\sem_iitk\sem 8\thesis\outputs\ticker_isin_map.json"
 with open(MAP_JSON, "w") as f:
     json.dump(FIRMS, f, indent=2)
 print(f"ticker -> ISIN map saved to {MAP_JSON}")

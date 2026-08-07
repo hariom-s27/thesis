@@ -27,13 +27,17 @@ import requests
 # ---- config -----------------------------------------------------------------
 BASE       = r"D:\sem_iitk\sem 8\thesis"          # absolute -> always same folder
 OUT_DIR    = os.path.join(BASE, "api_transcripts")
-LOG_CSV    = os.path.join(BASE, "download_log.csv")
-MAP_JSON   = os.path.join(BASE, "ticker_isin_map.json")
-EMPTY_JSON = os.path.join(BASE, "confirmed_empty.json")   # quarters confirmed to have no transcript -- never re-spend a call on these
+OUTPUT_DIR = os.path.join(BASE, "outputs")
+LOG_CSV    = os.path.join(OUTPUT_DIR, "download_log.csv")
+MAP_JSON   = os.path.join(OUTPUT_DIR, "ticker_isin_map.json")
+EMPTY_JSON = os.path.join(OUTPUT_DIR, "confirmed_empty.json")   # quarters confirmed to have no transcript -- never re-spend a call on these
 
-YEARS      = list(range(2007, 2025))   # pre-2007 mostly empty based on XOM/CVX pattern -- start here; never go PAST 2024
+YEARS      = list(range(2007, 2026))   # pre-2007 mostly empty based on XOM/CVX pattern -- start here.
+                                        # 2025 has NO official benchmark row (official CSV ends
+                                        # 2024Q4) -- useful for trend analysis only, not the core
+                                        # validation correlation.
 SLEEP_SEC  = 13                    # polite pacing
-MAX_CALLS  = 200                   # hard stop so one run can't burn everything
+MAX_CALLS  = 300                   # hard stop so one run can't burn everything
 
 MY_SHARE   = 0      # person A = 0, person B = 1, person C = 2
 NUM_PEOPLE = 1       # temporarily solo -- claim ALL remaining jobs to finish the last 15
@@ -47,9 +51,13 @@ FIRMS = {
     # energy / utilities (high climate talk)
     "XOM":  "US30231G1022",   "CVX":  "US1667641005",
     "NEE":  "US65339F1012",   "DUK":  "US26441C2044",
+    "COP":  "US20825C1045",   "OXY":  "US6745991058",
+    "SO":   "US8425871071",   "D":    "US25746U1097",
+    "DAL":  "US2473617023",
     # industrials / autos (medium)
     "GM":   "US37045V1008",   "F":    "US3453708600",
     "CAT":  "US1491231015",   "BA":   "US0970231058",
+    "MMM":  "US88579Y1010",
     # finance / tech / consumer (low climate talk -- YOU NEED THESE for spread)
     "JPM":  "US46625H1005",   "MSFT": "US5949181045",
     "WMT":  "US9311421039",   "PFE":  "US7170811035",
@@ -84,6 +92,7 @@ else:
 _av_idx  = 0        # index of the AV key currently in use
 NJ_KEY   = None      # API Ninjas transcripts are premium-only
 os.makedirs(OUT_DIR, exist_ok=True)
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 print(f"providers available -> AlphaVantage: {len(AV_KEY_POOL)} key(s) | API Ninjas: {bool(NJ_KEY)}")
 if not (AV_KEY_POOL or NJ_KEY):
     raise SystemExit("No keys found in .env")
