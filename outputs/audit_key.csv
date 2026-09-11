@@ -1,101 +1,101 @@
 snippet_id,doc,arm,anchor_bigram,anchor_count
-S000,XOM_2014Q1,positive,industrial need,1
-S001,COP_2011Q2,positive,new energy,1
-S002,BA_2009Q4,positive,reduce air,1
-S003,CVX_2018Q3,positive,develop renewable,1
-S004,BA_2014Q1,zero,,0
-S005,CAT_2009Q4,positive,relate epa,1
-S006,BA_2019Q2,zero,,0
-S007,XOM_2007Q2,positive,compare henry,1
-S008,JPM_2011Q2,zero,,0
-S009,XOM_2024Q1,positive,emission intensity,2
-S010,XOM_2007Q1,zero,,0
-S011,MSFT_2011Q1,zero,,0
-S012,GM_2017Q4,positive,autonomous vehicle,2
-S013,DUK_2020Q4,positive,clean energy,24
-S014,CVX_2015Q3,positive,compressor gas,1
-S015,GM_2017Q1,positive,electric vehicle,11
-S016,JPM_2024Q3,positive,help clean,1
-S017,BA_2021Q1,positive,energy star,1
-S018,F_2011Q4,positive,family vehicle,1
-S019,COP_2015Q3,positive,conventional shale,1
-S020,DUK_2012Q1,positive,unscrubbed coal,2
-S021,CAT_2019Q1,positive,course solar,1
-S022,F_2023Q2,positive,electric vehicle,4
-S023,COP_2019Q2,zero,,0
-S024,KO_2024Q1,zero,,0
-S025,XOM_2022Q3,positive,gas emission,2
-S026,MSFT_2007Q1,zero,,0
-S027,MSFT_2015Q2,positive,drive affordable,1
-S028,GM_2007Q3,zero,,0
-S029,XOM_2014Q3,positive,progress resource,1
-S030,MSFT_2012Q4,zero,,0
-S031,CVX_2010Q4,positive,arrangement natural,1
-S032,COP_2011Q3,positive,address environmental,1
-S033,JPM_2012Q4,zero,,0
-S034,CAT_2008Q4,positive,power marine,1
-S035,JPM_2022Q4,zero,,0
-S036,GM_2019Q3,positive,battery electric,5
-S037,GM_2014Q1,positive,actual vehicle,1
-S038,GM_2020Q4,positive,electric vehicle,2
-S039,JPM_2010Q3,zero,,0
-S040,BA_2020Q1,positive,efficient airplane,2
-S041,JPM_2018Q2,positive,energy little,1
-S042,MSFT_2016Q1,zero,,0
-S043,COP_2016Q1,zero,,0
-S044,JPM_2022Q3,zero,,0
-S045,BA_2019Q4,zero,,0
-S046,XOM_2018Q4,zero,,0
-S047,OXY_2008Q3,zero,,0
-S048,CAT_2021Q1,positive,climate relate,2
-S049,GM_2016Q2,positive,energy vehicle,3
-S050,BA_2013Q4,zero,,0
-S051,MSFT_2010Q3,zero,,0
-S052,JPM_2014Q2,positive,catalyst lead,1
-S053,CVX_2016Q3,zero,,0
-S054,GM_2023Q3,positive,battery cell,5
-S055,COP_2011Q4,positive,cover natural,1
-S056,COP_2020Q2,zero,,0
-S057,MSFT_2022Q1,zero,,0
-S058,JPM_2023Q4,positive,affordable supply,1
-S059,CVX_2008Q4,positive,issue carbon,1
-S060,MSFT_2009Q2,zero,,0
-S061,DUK_2016Q4,positive,clean energy,5
-S062,OXY_2024Q3,positive,energy independence,2
-S063,XOM_2018Q3,positive,efficient unit,1
-S064,COP_2018Q1,positive,notice award,1
-S065,CVX_2019Q2,positive,fuel california,2
-S066,JPM_2013Q3,zero,,0
-S067,COP_2010Q4,positive,gas comprise,1
-S068,MSFT_2008Q1,zero,,0
-S069,DUK_2023Q4,positive,clean energy,3
-S070,COP_2013Q1,positive,secondly natural,1
-S071,BA_2010Q4,zero,,0
-S072,COP_2010Q3,zero,,0
-S073,BA_2011Q2,positive,efficient airplane,1
-S074,MSFT_2012Q1,zero,,0
-S075,COP_2012Q2,zero,,0
-S076,DUK_2015Q2,positive,clean power,4
-S077,CVX_2008Q1,positive,project thailand,1
-S078,OXY_2018Q4,positive,climate change,1
-S079,MSFT_2009Q1,zero,,0
-S080,BA_2023Q2,zero,,0
-S081,SO_2008Q3,positive,dispatch gas,2
-S082,CVX_2023Q1,positive,acquisition renewable,1
-S083,NEE_2019Q2,positive,wind repowering,4
-S084,COP_2014Q1,positive,party natural,1
-S085,JPM_2024Q1,zero,,0
-S086,CAT_2017Q3,positive,generation largely,1
-S087,NEE_2017Q3,positive,wind resource,8
-S088,KO_2023Q2,zero,,0
-S089,CAT_2011Q3,zero,,0
-S090,BA_2007Q3,zero,,0
-S091,CVX_2014Q4,zero,,0
-S092,MSFT_2022Q2,positive,building smart,1
-S093,OXY_2013Q3,positive,carbon dioxide,1
-S094,F_2012Q1,zero,,0
-S095,OXY_2017Q2,positive,development clean,1
-S096,GM_2017Q2,positive,autonomous vehicle,11
-S097,CVX_2012Q2,positive,complete lng,1
-S098,BA_2009Q1,zero,,0
-S099,NEE_2018Q2,positive,power florida,5
+S000,GM_2016Q2,positive,energy vehicle,3
+S001,JPM_2014Q2,positive,catalyst lead,1
+S002,MMM_2020Q4,positive,air quality,1
+S003,OXY_2022Q3,positive,carbon dioxide,3
+S004,GM_2007Q1,zero,,0
+S005,HON_2020Q4,positive,energy footprint,1
+S006,UNH_2014Q4,zero,,0
+S007,CVX_2020Q1,positive,gas emission,3
+S008,CVX_2017Q2,zero,,0
+S009,XOM_2023Q3,positive,hydrogen carbon,2
+S010,XOM_2011Q1,zero,,0
+S011,CVX_2014Q4,zero,,0
+S012,HON_2022Q2,positive,carbon energy,2
+S013,DAL_2024Q3,positive,clean reliable,1
+S014,COP_2024Q3,positive,efficient program,1
+S015,HON_2021Q2,positive,farm project,2
+S016,SO_2017Q2,positive,acquisition renewable,1
+S017,COP_2013Q4,positive,design natural,1
+S018,MSFT_2022Q4,positive,power world,2
+S019,DAL_2008Q3,positive,certificate expect,1
+S020,MMM_2008Q3,positive,carbon emission,1
+S021,SO_2022Q2,positive,carbon free,2
+S022,SO_2014Q4,positive,power include,2
+S023,DAL_2012Q3,zero,,0
+S024,DAL_2025Q3,zero,,0
+S025,CVX_2022Q1,positive,new energy,2
+S026,MSFT_2012Q1,zero,,0
+S027,HON_2011Q2,positive,address carbon,1
+S028,XOM_2018Q2,zero,,0
+S029,DUK_2017Q1,positive,carbon emission,2
+S030,COP_2016Q1,zero,,0
+S031,SO_2022Q3,positive,add renewable,1
+S032,SO_2019Q4,positive,carbon emission,2
+S033,JPM_2018Q3,zero,,0
+S034,D_2017Q4,positive,greensville county,2
+S035,UNH_2024Q2,zero,,0
+S036,F_2013Q1,positive,car utility,1
+S037,HON_2008Q3,positive,energy efficient,3
+S038,BA_2016Q3,positive,program clean,1
+S039,MSFT_2025Q3,zero,,0
+S040,DAL_2025Q4,positive,enhance diversity,1
+S041,F_2008Q4,positive,electric vehicle,2
+S042,COP_2018Q3,zero,,0
+S043,BA_2022Q2,zero,,0
+S044,PFE_2018Q4,zero,,0
+S045,PFE_2020Q4,zero,,0
+S046,MSFT_2017Q4,zero,,0
+S047,JPM_2022Q4,zero,,0
+S048,CAT_2023Q1,positive,annual sustainability,1
+S049,XOM_2014Q2,positive,abundant affordable,1
+S050,DAL_2009Q2,zero,,0
+S051,COP_2007Q1,zero,,0
+S052,F_2022Q1,positive,electric vehicle,2
+S053,PFE_2023Q1,zero,,0
+S054,CVX_2014Q1,positive,mexico lng,1
+S055,DUK_2023Q2,positive,clean energy,4
+S056,PFE_2007Q2,zero,,0
+S057,MSFT_2014Q1,zero,,0
+S058,OXY_2013Q2,positive,joaquin basin,3
+S059,OXY_2018Q1,positive,efficient type,1
+S060,BA_2013Q4,zero,,0
+S061,GM_2011Q4,positive,vehicle development,2
+S062,HON_2025Q2,positive,energy sustainability,3
+S063,DUK_2025Q4,positive,affordable energy,3
+S064,OXY_2012Q1,positive,plant reliable,1
+S065,XOM_2023Q1,positive,carbon project,2
+S066,JPM_2008Q4,zero,,0
+S067,F_2015Q3,positive,vehicle china,1
+S068,CAT_2007Q2,zero,,0
+S069,JPM_2017Q2,positive,meet prime,1
+S070,MMM_2024Q1,positive,epa recently,1
+S071,DAL_2014Q1,zero,,0
+S072,KO_2015Q1,zero,,0
+S073,UNH_2021Q2,positive,publish sustainability,1
+S074,DAL_2020Q1,zero,,0
+S075,MSFT_2010Q4,zero,,0
+S076,XOM_2012Q3,positive,strength environmental,1
+S077,CAT_2024Q1,positive,battery electric,2
+S078,NEE_2014Q3,positive,wind resource,3
+S079,WMT_2023Q1,zero,,0
+S080,MMM_2017Q2,zero,,0
+S081,KO_2011Q1,positive,access clean,1
+S082,NEE_2023Q4,positive,wind resource,4
+S083,CAT_2025Q2,positive,come solar,2
+S084,SO_2023Q2,positive,carbon free,2
+S085,MSFT_2017Q3,zero,,0
+S086,OXY_2020Q2,positive,climate change,2
+S087,DAL_2019Q1,positive,environmental sustainability,1
+S088,WMT_2018Q2,zero,,0
+S089,CVX_2008Q3,zero,,0
+S090,JPM_2016Q3,zero,,0
+S091,MSFT_2016Q4,zero,,0
+S092,MSFT_2020Q2,positive,carbon emit,1
+S093,XOM_2009Q1,positive,capacity energy,1
+S094,MSFT_2008Q1,zero,,0
+S095,UNH_2021Q4,positive,request federal,1
+S096,CAT_2020Q2,positive,industry energy,1
+S097,NEE_2011Q3,positive,renewable energy,5
+S098,PFE_2025Q2,zero,,0
+S099,WMT_2019Q4,positive,renewable energy,1

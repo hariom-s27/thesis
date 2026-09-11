@@ -6,3 +6,12 @@ old _work/
 __pycache__/
 week1_thesis/fd6jq-osfstorage-Legacy-archive/
 *.pdf
+
+# ---- raw corpora / third-party papers & replication data: not ours to redistribute ----
+/data/
+/week2/
+/sep_week01/
+
+# ---- arpipe: its own git repo with its own GitHub remote (hariom-s27/arpipe) ----
+sep_week1/arpipe-0.1.0/
+sep_week1/.claude/

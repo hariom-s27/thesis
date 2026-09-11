@@ -1,9 +1,9 @@
 measure,method,r,lo,hi,n
-cc_expo,pearson,0.9863,0.9509,0.995,51
-cc_expo,spearman,0.9668,0.8868,0.9851,51
-op_expo,pearson,0.9825,0.9462,0.9937,51
-op_expo,spearman,0.9543,0.8593,0.9775,51
-rg_expo,pearson,0.908,0.6336,0.9655,51
-rg_expo,spearman,0.7933,0.5203,0.9146,51
-ph_expo,pearson,0.8968,0.6644,0.958,51
-ph_expo,spearman,0.7767,0.3459,0.9895,51
+cc_expo,pearson,0.9845,0.9638,0.9881,318
+cc_expo,spearman,0.9456,0.8734,0.9739,318
+op_expo,pearson,0.9806,0.934,0.9872,318
+op_expo,spearman,0.9194,0.833,0.961,318
+rg_expo,pearson,0.8903,0.841,0.9306,318
+rg_expo,spearman,0.8524,0.7266,0.9232,318
+ph_expo,pearson,0.7025,0.5181,0.8435,318
+ph_expo,spearman,0.6153,0.4868,0.7314,318
